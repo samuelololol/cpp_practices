@@ -13,6 +13,9 @@ std::tr1::shared_ptr<std::string> char_to_string(std::tr1::shared_ptr<std::strin
 void reuse_stringptr(std::tr1::shared_ptr<std::string>);
 void string_to_char(std::tr1::shared_ptr<std::string>);
 void string_concate(std::tr1::shared_ptr<std::string>);
+void string_indexing(std::tr1::shared_ptr<std::string>);
+void string_operation(std::tr1::shared_ptr<std::string>);
+
 
 int main()
 {
@@ -36,6 +39,11 @@ int main()
     cout << "counts of ptr: " << ptr.use_count() << endl;
     cout << "*ptr show in main: " << *ptr << endl;
 
+    // string indexing
+    string_indexing(ptr);
+
+    // string indexing
+    string_operation(ptr);
     return 0;
 }
 
@@ -45,7 +53,8 @@ std::tr1::shared_ptr<std::string> char_to_string(std::tr1::shared_ptr<std::strin
     cout << "================================================================================" << endl;
     strptr = std::tr1::shared_ptr<std::string>(new std::string("hahahaha"));
     cout << "address of strptr: " << strptr << ", strptr: " << *strptr << endl;
-    *strptr = "ccccc";
+    //*strptr = "ccccc";
+    strptr->assign("ccccccc");
     cout << "address of strptr: " << strptr << ", strptr: " << *strptr << endl;
     cout << "counts of strptr: " << strptr.use_count() << endl;
     return strptr;
@@ -82,3 +91,33 @@ void string_concate(std::tr1::shared_ptr<std::string> reuseptr3)
     cout << "address of reuseptr3: " << reuseptr3 << ", reuseptr3: " << *reuseptr3 << endl;
 }
 
+
+void string_indexing(std::tr1::shared_ptr<std::string> reuseptr4)
+{
+    cout << "================================================================================" << endl;
+    for (int i=0; i < reuseptr4->size(); i++){
+        cout << "index: " << i << ", value: " << (*reuseptr4)[i] << endl;
+    }
+}
+
+
+void string_operation(std::tr1::shared_ptr<std::string> reuseptr5)
+{
+    cout << "================================================================================" << endl;
+    // 0123456789....
+    // ccccccc_postfix
+    //                 substr(start, len)
+    cout << reuseptr5->substr(6,3) << endl;
+    //                      assign(str, start, len)
+    *reuseptr5 = reuseptr5->assign(*reuseptr5, 3, 9);
+    cout << *reuseptr5 << endl;
+    //                      append(str, start, len)
+    *reuseptr5 = reuseptr5->append(*reuseptr5, 0, 9);
+    cout << *reuseptr5 << endl;
+    //                      insert(pos, str)
+    *reuseptr5 = reuseptr5->insert(9, "[_append_]");
+    cout << *reuseptr5 << endl;
+    cout << "length: " << reuseptr5->length() << endl;
+    cout << "size: " << reuseptr5->size() << endl;
+    cout << "find: c_" << reuseptr5->find("c_") << endl;
+}

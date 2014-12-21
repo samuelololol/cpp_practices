@@ -117,7 +117,11 @@ void string_operation(std::tr1::shared_ptr<std::string> reuseptr5)
     //                      insert(pos, str)
     *reuseptr5 = reuseptr5->insert(9, "[_append_]");
     cout << *reuseptr5 << endl;
+    cout << "find: c_" << reuseptr5->find("c_") << endl;
     cout << "length: " << reuseptr5->length() << endl;
     cout << "size: " << reuseptr5->size() << endl;
-    cout << "find: c_" << reuseptr5->find("c_") << endl;
+    //cout << "*reuseptr5: " << *reuseptr5 << endl;
+    std::string copied_string = std::string(*reuseptr5);
+    cout << "operator== : " << (copied_string == *reuseptr5) << endl;
+
 }

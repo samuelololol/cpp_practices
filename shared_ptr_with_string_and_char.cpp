@@ -34,7 +34,6 @@ int main(){
 
 std::tr1::shared_ptr<std::string> char_to_string(std::tr1::shared_ptr<std::string> strptr){
     strptr = std::tr1::shared_ptr<std::string>(new std::string("hahahaha"));
-
     cout << "address of strptr: " << strptr << ", strptr: " << *strptr << endl;
     *strptr = "ccccc";
     cout << "address of strptr: " << strptr << ", strptr: " << *strptr << endl;
@@ -50,8 +49,9 @@ void reuse_stringptr(std::tr1::shared_ptr<std::string> reuseptr){
 void string_to_char(std::tr1::shared_ptr<std::string> reuseptr2){
     char* c = (char*)malloc(reuseptr2->size()*sizeof(char));
     strcpy(c, reuseptr2->c_str());
+    cout << "address of c: " << &c << ", c: " << c << endl;
+    free(c);
 
     cout << "address of reuseptr2: " << reuseptr2 << ", reuseptr2: " << *reuseptr2 << endl;
     cout << "address of reuseptr2.get(): " << reuseptr2.get() << endl;
-    cout << "address of c: " << &c << ", c: " << c << endl;
 }

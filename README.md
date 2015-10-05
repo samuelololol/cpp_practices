@@ -2,13 +2,13 @@
 
 1. C++ and STL
 --------------
-* [shared\_ptr\_with\_string\_and\_char.cpp](https://github.com/samuelololol/cpp_test/blob/master/shared_ptr_with_string_and_char.cpp)
-* [array\_to\_vector.cpp](https://github.com/samuelololol/cpp_test/blob/master/src/array_to_vector.cpp)
-* [incrementing\_sequence.cpp](https://github.com/samuelololol/cpp_test/blob/master/src/incrementing_sequence.cpp)
-* [pair.cpp](https://github.com/samuelololol/cpp_test/blob/master/src/pair.cpp)
+* [Share pointer, string and char](https://github.com/samuelololol/cpp_practices/blob/master/shared_ptr_with_string_and_char.cpp)
+* [Array and vector](https://github.com/samuelololol/cpp_practices/blob/master/src/array_to_vector.cpp)
+* [Incrementing Sequence](https://github.com/samuelololol/cpp_practices/blob/master/src/incrementing_sequence.cpp)
+* [Pair](https://github.com/samuelololol/cpp_practices/blob/master/src/pair.cpp)
 
 
 2. Utils
 --------
-* [xerces\_xml.cpp](https://github.com/samuelololol/cpp_test/blob/master/src/xerces_xml.cpp)
+* [Xerces XML](https://github.com/samuelololol/cpp_practices/blob/master/src/xerces_xml.cpp)
 

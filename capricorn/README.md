@@ -17,4 +17,22 @@ PREPARE CPPCMS
 (capricorn/cppcms-1.0.5/build)$ cd ../..
 ```
 
- 
+* list lib
+```
+(capricorn)$ tree lib -L 2
+
+lib
+├── bin
+│   ├── cppcms_config_find_param
+│   ├── cppcms_make_key
+│   ├── cppcms_run
+│   ├── cppcms_scale
+│   └── cppcms_tmpl_cc
+├── include
+│   ├── booster
+│   └── cppcms
+└── lib
+    ├── libbooster.a
+    └── libcppcms.a
+```
+

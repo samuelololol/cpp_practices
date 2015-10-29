@@ -6,15 +6,15 @@ PREPARE CPPCMS
 
 * build cppcms
 ```
-tar xjf cppcms-1.0.5.tar.bz2
-cd cppcms-1.0.5/
-mkdir build
-cd build
-cmake -DDISABLE_SHARED=ON -DCMAKE_INSTALL_PREFIX=../../lib ..
-make
-make test
-make install
-cd ../..
+(capricorn)$ tar xjf cppcms-1.0.5.tar.bz2
+(capricorn)$ cd cppcms-1.0.5/
+(capricorn/cppcms-1.0.5)$ mkdir build
+(capricorn/cppcms-1.0.5)$ cd build
+(capricorn/cppcms-1.0.5/build)$ cmake -DDISABLE_SHARED=ON -DCMAKE_INSTALL_PREFIX=../../lib ..
+(capricorn/cppcms-1.0.5/build)$ make
+(capricorn/cppcms-1.0.5/build)$ make test
+(capricorn/cppcms-1.0.5/build)$ make install
+(capricorn/cppcms-1.0.5/build)$ cd ../..
 ```
 
  
